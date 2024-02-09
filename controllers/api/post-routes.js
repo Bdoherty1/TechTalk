@@ -57,6 +57,52 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Add more routes as needed for creating, updating, and deleting blog posts
+// Route to create a new blog post
+router.post('/', async (req, res) => {
+  try {
+    const newPost = await BlogPost.create({
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.user_id, // Assuming you have session authentication and user id stored in session
+    });
+    res.status(200).json(newPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Route to update an existing blog post
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedPost = await BlogPost.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Route to delete a blog post
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedPost = await BlogPost.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(deletedPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
