@@ -63,7 +63,7 @@ router.post('/', async (req, res) => {
     const newPost = await BlogPost.create({
       title: req.body.title,
       content: req.body.content,
-      user_id: req.session.user_id, // Assuming you have session authentication and user id stored in session
+      user_id: req.session.user_id, 
     });
     res.status(200).json(newPost);
   } catch (err) {
