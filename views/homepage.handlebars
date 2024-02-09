@@ -1,0 +1,11 @@
+{{#each blogPosts as |post| }}
+<div class="row align-center mb-5">
+  <div class="col-md-12">
+    <h2>{{{get_emoji}}} {{post.title}}</h2>
+    <p>{{post.content}}</p>
+    <p>Author: {{post.User.name}}</p>
+    <p>Date: {{formatDate post.createdAt}}</p>
+    <!-- Add comments section if needed -->
+  </div>
+</div>
+{{/each}}

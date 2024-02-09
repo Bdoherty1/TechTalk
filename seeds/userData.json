@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Sal",
+    "email": "sal@hotmail.com",
+    "password": "password12345",
+    "blogPosts": [
+      {
+        "title": "My First Blog Post",
+        "content": "This is the content of my first blog post."
+      },
+      {
+        "title": "Another Blog Post",
+        "content": "This is another blog post written by me."
+      }
+    ]
+  },
+  {
+    "name": "Lernantino",
+    "email": "lernantino@gmail.com",
+    "password": "password12345",
+    "blogPosts": [
+      {
+        "title": "Introduction to JavaScript",
+        "content": "In this post, I'll introduce JavaScript and its features."
+      }
+    ]
+  }
+]
+  
