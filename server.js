@@ -42,12 +42,30 @@
 //   app.listen(PORT, () => console.log('Now listening'));
 // });
 
+const express = require('express');
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: 'localhost',
-  dialect: 'mysql',
-  port: 3000
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Database configuration
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'mysql'
 });
 
-module.exports = sequelize;
+// Test database connection
+sequelize.authenticate()
+  .then(() => {
+    console.log('Connection to the database has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+// Your other routes and middleware configurations go here...
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
