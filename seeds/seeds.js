@@ -12,9 +12,9 @@ const seedDatabase = async () => {
     const createdUser = await User.create(user);
 
     // Check if user has blog posts
-    if (user.blogPosts && user.blogPosts.length > 0) {
+    if (user.BlogPosts && user.BlogPosts.length > 0) {
       // Create blog posts associated with the user
-      for (const post of user.blogPosts) {
+      for (const post of user.BlogPosts) {
         await BlogPost.create({
           title: post.title,
           content: post.content,
