@@ -1,12 +1,16 @@
+// Import necessary modules
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('../models/User');
-const BlogPost = require('../models/post');
+const User = require('./User'); // Corrected import path
+const BlogPost = require('./post'); // Corrected import path
 
+// Define Comment model
 class Comment extends Model {}
 
+// Initialize Comment model
 Comment.init(
   {
+    // Define model attributes
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -46,10 +50,11 @@ Comment.init(
 // Define associations
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
-  });
-
-Comment.belongsTo(BlogPost, {
-  foreignKey: 'blogposts_id',
 });
 
+Comment.belongsTo(BlogPost, {
+  foreignKey: 'blogpost_id',
+});
+
+// Export Comment model
 module.exports = Comment;

@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('../models/User');
-const Comment = require('../models/comment');
+// const User = require('./User');
+// const Comment = require('./comment');
 
 class BlogPost extends Model {}
 
@@ -39,13 +39,13 @@ BlogPost.init(
   }
 );
 
-// Define associations
+// // Define associations
 BlogPost.belongsTo(User, {
     foreignKey: 'user_id', 
   });
 
 BlogPost.hasMany(Comment, {
-  foreignKey: 'blogposts_id',
+  foreignKey: 'blogpost_id',
   onDelete: 'CASCADE',
 });
 
