@@ -21,16 +21,13 @@
 
 
 
-// // Import necessary modules
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User'); // Corrected import path
-const BlogPost = require('./post'); // Corrected import path
+const User = require('./User'); 
+const BlogPost = require('./post'); 
 
-// Define Comment model
 class Comment extends Model {}
 
-// Initialize Comment model
 Comment.init(
   {
     // Define model attributes

@@ -1,3 +1,23 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class User extends Model {}
+
+User.init(
+  {
+    // Define user model attributes here
+  },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+  }
+);
+
+module.exports = User;
+
 // const { Model, DataTypes } = require('sequelize');
 // const bcrypt = require('bcrypt');
 // const sequelize = require('../config/connection');
@@ -66,22 +86,3 @@
 
 // module.exports = User;
 
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connections');
-
-class User extends Model {}
-
-User.init(
-  {
-    // Define your user model attributes here
-  },
-  {
-    sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
-  }
-);
-
-module.exports = User;

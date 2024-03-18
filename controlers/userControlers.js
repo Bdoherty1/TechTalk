@@ -1,9 +1,8 @@
-const { User } = require('../models');
+const { User } = require('../models/User');
 
 module.exports = {
   loginUser: async (req, res) => {
     try {
-      // TODO: Add a comment describing the functionality of this expression
       const userData = await User.findOne({ where: { email: req.body.email } });
 
       if (!userData) {
@@ -13,7 +12,6 @@ module.exports = {
         return;
       }
 
-      // TODO: Add a comment describing the functionality of this expression
       const validPassword = await userData.checkPassword(req.body.password);
 
       if (!validPassword) {
@@ -23,7 +21,6 @@ module.exports = {
         return;
       }
 
-      // TODO: Add a comment describing the functionality of this method
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
@@ -38,7 +35,6 @@ module.exports = {
 
   logoutUser: (req, res) => {
     if (req.session.logged_in) {
-      // TODO: Add a comment describing the functionality of this method
       req.session.destroy(() => {
         res.status(204).end();
       });
