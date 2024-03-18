@@ -50,8 +50,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Database configuration
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'mysql'
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+  dialect: 'mysql',
+  host: 'localhost', // Assuming your MySQL server is running locally
 });
 
 // Test database connection

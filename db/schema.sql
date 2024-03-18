@@ -5,7 +5,7 @@ DROP DATABASE IF EXISTS user_db;
 CREATE DATABASE user_db;
 
 -- Use the created database
--- USE user_db;
+USE user_db;
 
 -- -- Create users table
 -- CREATE TABLE users (

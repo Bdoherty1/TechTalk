@@ -1,4 +1,27 @@
-// Import necessary modules
+
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connections');
+
+// class Comment extends Model {}
+
+// Comment.init(
+//   {
+//     // Define your comment model attributes here
+//   },
+//   {
+//     sequelize,
+//     timestamps: true,
+//     freezeTableName: true,
+//     underscored: true,
+//     modelName: 'comment',
+//   }
+// );
+
+// module.exports = Comment;
+
+
+
+// // Import necessary modules
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User'); // Corrected import path

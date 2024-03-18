@@ -1,52 +1,72 @@
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
+// // const User = require('./User');
+// // const Comment = require('./comment');
+
+// class BlogPost extends Model {}
+
+// BlogPost.init(
+//   {
+//     id: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       primaryKey: true,
+//       autoIncrement: true,
+//     },
+//     title: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+//     content: {
+//       type: DataTypes.TEXT,
+//       allowNull: false,
+//     },
+//     user_id: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       references: {
+//         model: 'users',
+//         key: 'id',
+//       },
+//     },
+//   },
+//   {
+//     sequelize,
+//     timestamps: true,
+//     freezeTableName: true,
+//     underscored: true,
+//     modelName: 'blog_posts',
+//   }
+// );
+
+// // // Define associations
+// BlogPost.belongsTo(User, {
+//     foreignKey: 'user_id', 
+//   });
+
+// BlogPost.hasMany(Comment, {
+//   foreignKey: 'blogpost_id',
+//   onDelete: 'CASCADE',
+// });
+
+// module.exports = BlogPost;
+
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-// const User = require('./User');
-// const Comment = require('./comment');
+const sequelize = require('../config/connections');
 
-class BlogPost extends Model {}
+class Post extends Model {}
 
-BlogPost.init(
+Post.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    content: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'users',
-        key: 'id',
-      },
-    },
+    // Define your post model attributes here
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'blog_posts',
+    modelName: 'post',
   }
 );
 
-// // Define associations
-BlogPost.belongsTo(User, {
-    foreignKey: 'user_id', 
-  });
-
-BlogPost.hasMany(Comment, {
-  foreignKey: 'blogpost_id',
-  onDelete: 'CASCADE',
-});
-
-module.exports = BlogPost;
+module.exports = Post;
