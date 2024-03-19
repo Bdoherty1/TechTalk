@@ -40,6 +40,8 @@ To run the TechTalk application locally, follow these steps:
 - Handlebars.js
 - HTML5/CSS3
 - JavaScript
+## Current Deployed
+https://young-caverns-42853-59f9a17f83e8.herokuapp.com/
 
 ## Future Development
 I am actively working on deploying the application to Heroku. Additionally, I have integrated Handlebars.js for enhanced view rendering and implemented controllers for home and user functionalities. Furthermore, I have established API routes for various features including comments, the dashboard, home, posts, and user interactions. Stay tuned for further developments as I continue to enhance the application.
