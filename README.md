@@ -35,10 +35,10 @@ To run the TechTalk application locally, follow these steps:
 
 - Node.js
 - Express.js
-- Sequelize ORM
+- Sequelize 
 - MySQL
 - Handlebars.js
-- HTML5/CSS3
+- HTML/CSS
 - JavaScript
 ## Current Deployed
 https://young-caverns-42853-59f9a17f83e8.herokuapp.com/
